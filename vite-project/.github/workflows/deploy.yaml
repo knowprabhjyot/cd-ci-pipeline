@@ -1,0 +1,40 @@
+name: Deployment Pipeline
+
+on:
+  pull_request:
+    branches:
+      - "*"
+
+jobs:
+  setup:
+    name: Setup
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+      - name: Install Dependencies
+        run: npm install
+    
+  prettierFormatCheck:
+    name: Prettier Format Check
+     runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+      - name: Install Dependencies
+        run: npm install
+      - name: Check Prettier issues
+        run: npm run prettier-check
+    
+  build:
+    name: Build File
+      runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+      - name: Install Dependencies
+        run: npm install
+      - name: Check Prettier issues
+        run: npm run prettier-check
+      - name: Run Build
+        run: npm run build
