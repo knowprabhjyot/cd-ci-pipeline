@@ -24,7 +24,7 @@ jobs:
       - name: Install Dependencies
         run: npm install
       - name: Check Prettier issues
-        run: npm run prettier-check
+        run: npm run prettier:check
     
   build:
     name: Build File
