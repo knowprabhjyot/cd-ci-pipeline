@@ -18,6 +18,7 @@ jobs:
   prettierFormatCheck:
     name: Prettier Format Check
     runs-on: ubuntu-latest
+    needs: [setup]
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
@@ -29,12 +30,13 @@ jobs:
   build:
     name: Build File
     runs-on: ubuntu-latest
+    needs: [prettierFormatCheck]
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
       - name: Install Dependencies
         run: npm install
       - name: Check Prettier issues
-        run: npm run prettier-check
+        run: npm run prettier:check
       - name: Run Build
         run: npm run build
