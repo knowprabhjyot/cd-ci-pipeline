@@ -17,7 +17,7 @@ jobs:
     
   prettierFormatCheck:
     name: Prettier Format Check
-     runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
@@ -28,7 +28,7 @@ jobs:
     
   build:
     name: Build File
-      runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
