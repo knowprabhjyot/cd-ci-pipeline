@@ -13,6 +13,7 @@ function App() {
   return (
     <>
       <p style={{ backgroundColor: "red"}}>Hello World</p>
+     <div>Wohoo!</div>
      <h1>Number: {number}</h1>
      <h2>Square: {square}</h2>
       <button onClick={() => setNumber(prevNumber => prevNumber + 1)}>Click</button>
